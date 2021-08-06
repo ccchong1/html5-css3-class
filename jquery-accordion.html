@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery Accordion</title>
+        <style>
+            .container {
+              max-width: 500px;
+              margin: auto;
+            }
+        
+            .remainder-text {
+              display: none;
+            }
+        
+            button {
+              background: transparent;
+              border: none;
+            }
+        
+            button:hover {
+              cursor: pointer;
+            }
+          </style>
+        
+    </head>
+        <body>
+            <h1>jQuery Accordion</h1>
+            <div class="container">
+                <p class ="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultrices magna at nisl iaculis tempor. Aenean sapien nisl, interdum vitae faucibus eget, efficitur a ipsum. Donec pellentesque, quam vel molestie ornare, dolor tellus tincidunt ex, at euismod diam sapien ut nisi. Suspendisse non gravida est. Fusce sapien nisi, consequat sodales elit non, dignissim cursus justo. 
+                </p>
+                <p class="remainder-text">
+                    Nam fringilla metus risus, vitae ullamcorper ante fermentum et. Quisque feugiat, nibh sed condimentum feugiat, diam neque consequat eros, id faucibus augue elit sagittis lorem. Pellentesque placerat condimentum nibh at mollis. Suspendisse malesuada leo nec volutpat fermentum. In luctus nibh vel maximus suscipit. Aenean tempus mauris molestie, laoreet nibh non, tristique tellus. Fusce suscipit tincidunt velit quis maximus. Suspendisse potenti. Sed non augue tristique dolor hendrerit accumsan. Mauris fermentum molestie sapien eu ultricies.
+
+                    Praesent in leo vitae tortor aliquam sodales. Fusce aliquam bibendum feugiat. Praesent efficitur lorem eget condimentum lobortis. Suspendisse pellentesque dui vitae malesuada mattis. Aliquam vestibulum efficitur arcu et malesuada. Vestibulum tristique ante a libero accumsan iaculis. Curabitur id erat at ligula ultrices elementum quis id ante. Cras ut dui ut augue molestie commodo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris sed felis vel erat gravida rhoncus. Suspendisse placerat convallis sapien tristique gravida.
+                </p>
+                <button type="button" class="toggle-button">show more</button>
+          
+            </div>
+
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+            <script>
+                $(document).ready(function() {
+                  $('.toggle-button').on('click', function(){
+                    const buttonText = $(this).text().toLowerCase();
+            
+                    $(this).prev('.remainder-text').slideToggle();
+                    $(this).text(buttonText === 'show more' ? 'show less' : 'show more');
+                  });
+                });
+              </script>
+            
+            
+        </body>
+    
+</html>
